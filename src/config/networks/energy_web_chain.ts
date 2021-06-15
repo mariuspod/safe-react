@@ -1,19 +1,20 @@
 import EwcLogo from 'src/config/assets/token_ewc.svg'
 import { EnvironmentSettings, ETHEREUM_NETWORK, NetworkConfig, WALLETS } from 'src/config/networks/network.d'
+import { env } from 'src/utils/env'
 
 // @todo (agustin) we need to use fixed gasPrice because the oracle is not working right now and it's returning 0
 // once the oracle is fixed we need to remove the fixed value
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: 'https://safe-client.ewc.gnosis.io/v1',
-  txServiceUrl: 'https://safe-transaction.ewc.gnosis.io/api/v1',
-  safeUrl: 'https://ewc.gnosis-safe.io/app',
-  safeAppsUrl: 'https://safe-apps-ewc.staging.gnosisdev.com',
+  clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'https://safe-client.ewc.gnosis.io/v1'),
+  txServiceUrl: env('TX_SERVICE_URL', 'https://safe-transaction.ewc.gnosis.io/api/v1'),
+  safeUrl: env('SAFE_URL', 'https://ewc.gnosis-safe.io/app'),
+  safeAppsUrl: env('SAFE_APPS_URL', 'https://safe-apps-ewc.staging.gnosisdev.com'),
   gasPriceOracle: {
     url: 'https://station.energyweb.org',
     gasParameter: 'standard',
   },
   gasPrice: 1e6,
-  rpcServiceUrl: 'https://rpc.energyweb.org',
+  rpcServiceUrl: env('RPC_SERVICE_URL', 'https://rpc.energyweb.org'),
   networkExplorerName: 'Energy web explorer',
   networkExplorerUrl: 'https://explorer.energyweb.org',
   networkExplorerApiUrl: 'https://explorer.energyweb.org/api',
@@ -29,7 +30,7 @@ const mainnet: NetworkConfig = {
     },
     production: {
       ...baseConfig,
-      safeAppsUrl: 'https://apps-ewc.gnosis-safe.io',
+      safeAppsUrl: env('SAFE_APPS_URL', 'https://apps-ewc.gnosis-safe.io'),
     },
   },
   network: {

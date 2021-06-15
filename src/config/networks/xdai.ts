@@ -1,13 +1,14 @@
 import xDaiLogo from 'src/config/assets/token_xdai.svg'
 import { EnvironmentSettings, ETHEREUM_NETWORK, FEATURES, NetworkConfig, WALLETS } from 'src/config/networks/network.d'
+import { env } from 'src/utils/env'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: 'https://safe-client.xdai.gnosis.io/v1',
-  txServiceUrl: 'https://safe-transaction.xdai.gnosis.io/api/v1',
-  safeUrl: 'https://xdai.gnosis-safe.io/app',
-  safeAppsUrl: 'https://safe-apps-xdai.staging.gnosisdev.com',
+  clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'https://safe-client.xdai.gnosis.io/v1'),
+  txServiceUrl: env('TX_SERVICE_URL', 'https://safe-transaction.xdai.gnosis.io/api/v1'),
+  safeUrl: env('SAFE_URL', 'https://xdai.gnosis-safe.io/app'),
+  safeAppsUrl: env('SAFE_APPS_URL', 'https://safe-apps-xdai.staging.gnosisdev.com'),
   gasPrice: 1e9,
-  rpcServiceUrl: 'https://dai.poa.network/',
+  rpcServiceUrl: env('RPC_SERVICE_URL', 'https://dai.poa.network/'),
   networkExplorerName: 'Blockscout',
   networkExplorerUrl: 'https://blockscout.com/poa/xdai',
   networkExplorerApiUrl: 'https://blockscout.com/poa/xdai/api',
@@ -23,7 +24,7 @@ const xDai: NetworkConfig = {
     },
     production: {
       ...baseConfig,
-      safeAppsUrl: 'https://apps-xdai.gnosis-safe.io',
+      safeAppsUrl: env('SAFE_APPS_URL', 'https://apps-xdai.gnosis-safe.io'),
     },
   },
   network: {
