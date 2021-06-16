@@ -4,15 +4,15 @@ import { ETHGASSTATION_API_KEY } from 'src/utils/constants'
 import { env } from 'src/utils/env'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'https://safe-client.rinkeby.staging.gnosisdev.com/v1'),
-  txServiceUrl: env('TX_SERVICE_URL', 'https://safe-transaction.rinkeby.staging.gnosisdev.com/api/v1'),
-  safeUrl: env('SAFE_URL', 'https://rinkeby.gnosis-safe.io/app'),
-  safeAppsUrl: env('SAFE_APPS_URL', 'https://safe-apps.dev.gnosisdev.com'),
+  clientGatewayUrl: env('REACT_APP_CLIENT_GATEWAY_URL', 'https://safe-client.rinkeby.staging.gnosisdev.com/v1'),
+  txServiceUrl: env('REACT_APP_TX_SERVICE_URL', 'https://safe-transaction.rinkeby.staging.gnosisdev.com/api/v1'),
+  safeUrl: env('REACT_APP_SAFE_URL', 'https://rinkeby.gnosis-safe.io/app'),
+  safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'https://safe-apps.dev.gnosisdev.com'),
   gasPriceOracle: {
     url: `https://ethgasstation.info/json/ethgasAPI.json?api-key=${ETHGASSTATION_API_KEY}`,
     gasParameter: 'average',
   },
-  rpcServiceUrl: env('RPC_SERVICE_URL', 'https://rinkeby.infura.io:443/v3'),
+  rpcServiceUrl: env('REACT_APP_RPC_SERVICE_URL', 'https://rinkeby.infura.io:443/v3'),
   networkExplorerName: 'Etherscan',
   networkExplorerUrl: 'https://rinkeby.etherscan.io',
   networkExplorerApiUrl: 'https://api-rinkeby.etherscan.io/api',
@@ -25,13 +25,13 @@ const rinkeby: NetworkConfig = {
     },
     staging: {
       ...baseConfig,
-      safeAppsUrl: env('SAFE_APPS_URL', 'https://safe-apps.staging.gnosisdev.com'),
+      safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'https://safe-apps.staging.gnosisdev.com'),
     },
     production: {
       ...baseConfig,
-      clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'https://safe-client.rinkeby.gnosis.io/v1'),
-      txServiceUrl: env('TX_SERVICE_URL', 'https://safe-transaction.rinkeby.gnosis.io/api/v1'),
-      safeAppsUrl: env('SAFE_APPS_URL', 'https://apps.gnosis-safe.io'),
+      clientGatewayUrl: env('REACT_APP_CLIENT_GATEWAY_URL', 'https://safe-client.rinkeby.gnosis.io/v1'),
+      txServiceUrl: env('REACT_APP_TX_SERVICE_URL', 'https://safe-transaction.rinkeby.gnosis.io/api/v1'),
+      safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'https://apps.gnosis-safe.io'),
     },
   },
   network: {

@@ -3,16 +3,16 @@ import { EnvironmentSettings, ETHEREUM_NETWORK, NetworkConfig } from 'src/config
 import { env } from 'src/utils/env'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'http://localhost:8001/v1'),
-  txServiceUrl: env('TX_SERVICE_URL', 'http://localhost:8000/api/v1'),
-  relayApiUrl: env('RELAY_API_URL', 'https://safe-relay.staging.gnosisdev.com/api/v1'),
-  safeUrl: env('SAFE_URL', 'http://localhost:3000/app'),
-  safeAppsUrl: env('SAFE_APPS_URL', 'http://localhost:3002'),
+  clientGatewayUrl: env('REACT_APP_CLIENT_GATEWAY_URL', 'http://localhost:8001/v1'),
+  txServiceUrl: env('REACT_APP_TX_SERVICE_URL', 'http://localhost:8000/api/v1'),
+  relayApiUrl: env('REACT_APP_RELAY_API_URL', 'https://safe-relay.staging.gnosisdev.com/api/v1'),
+  safeUrl: env('REACT_APP_SAFE_URL', 'http://localhost:3000/app'),
+  safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'http://localhost:3002'),
   gasPriceOracle: {
     url: 'https://ethgasstation.info/json/ethgasAPI.json',
     gasParameter: 'average',
   },
-  rpcServiceUrl: env('RPC_SERVICE_URL', 'http://localhost:4447'),
+  rpcServiceUrl: env('REACT_APP_RPC_SERVICE_URL', 'http://localhost:4447'),
   networkExplorerName: 'Etherscan',
   networkExplorerUrl: 'https://rinkeby.etherscan.io',
   networkExplorerApiUrl: 'https://api-rinkeby.etherscan.io/api',

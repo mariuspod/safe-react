@@ -3,15 +3,15 @@ import { EnvironmentSettings, ETHEREUM_NETWORK, NetworkConfig, WALLETS } from 's
 import { env } from 'src/utils/env'
 
 const baseConfig: EnvironmentSettings = {
-  clientGatewayUrl: env('CLIENT_GATEWAY_URL', 'https://safe-client.volta.gnosis.io/v1'),
-  txServiceUrl: env('TX_SERVICE_URL', 'https://safe-transaction.volta.gnosis.io/api/v1'),
-  safeUrl: env('SAFE_URL', 'https://volta.gnosis-safe.io/app'),
-  safeAppsUrl: env('SAFE_APPS_URL', 'https://safe-apps-volta.staging.gnosisdev.com'),
+  clientGatewayUrl: env('REACT_APP_CLIENT_GATEWAY_URL', 'https://safe-client.volta.gnosis.io/v1'),
+  txServiceUrl: env('REACT_APP_TX_SERVICE_URL', 'https://safe-transaction.volta.gnosis.io/api/v1'),
+  safeUrl: env('REACT_APP_SAFE_URL', 'https://volta.gnosis-safe.io/app'),
+  safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'https://safe-apps-volta.staging.gnosisdev.com'),
   gasPriceOracle: {
     url: 'https://station.energyweb.org',
     gasParameter: 'standard',
   },
-  rpcServiceUrl: env('RPC_SERVICE_URL', 'https://volta-rpc.energyweb.org'),
+  rpcServiceUrl: env('REACT_APP_RPC_SERVICE_URL', 'https://volta-rpc.energyweb.org'),
   networkExplorerName: 'Volta explorer',
   networkExplorerUrl: 'https://volta-explorer.energyweb.org',
   networkExplorerApiUrl: 'https://volta-explorer.energyweb.org/api',
@@ -27,7 +27,7 @@ const mainnet: NetworkConfig = {
     },
     production: {
       ...baseConfig,
-      safeAppsUrl: env('SAFE_APPS_URL', 'https://apps-volta.gnosis-safe.io'),
+      safeAppsUrl: env('REACT_APP_SAFE_APPS_URL', 'https://apps-volta.gnosis-safe.io'),
     },
   },
   network: {
